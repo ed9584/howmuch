@@ -1,7 +1,7 @@
 package com.howmuch.guess.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.content.Media;
+import org.springframework.ai.model.Media;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
