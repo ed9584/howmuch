@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.run.BootRun
+
 plugins {
 	java
 	id("org.springframework.boot") version "4.0.6"
@@ -43,4 +45,9 @@ dependencyManagement {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+/* bootRun이 build 복사본이 아니라 src/main/resources를 읽어서, 수정이 곧 반영되게 합니다. */
+tasks.named<BootRun>("bootRun") {
+	sourceResources(sourceSets["main"])
 }
