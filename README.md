@@ -1,4 +1,6 @@
-# howMuchAI (guess)
+# 얼마게? (howMuch / guess)
+
+물건 가격을 수식으로 알려주는 AI
 
 ## Layout
 
