@@ -1,0 +1,19 @@
+# Railway Project token + GitHub Actions에서 서비스 ID 설정 후 사용.
+# Secrets: RAILWAY_TOKEN, RAILWAY_SERVICE_ID
+# https://docs.railway.com/guides/github-actions
+name: Deploy to Railway
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [frontend]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+    env:
+      RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: railway up --service="${{ secrets.RAILWAY_SERVICE_ID }}"
