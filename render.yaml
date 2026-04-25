@@ -1,0 +1,10 @@
+# Render: New → Blueprint → repo 연결 시 frontend 브랜치 선택 또는 아래 branch 사용
+services:
+  - type: web
+    name: howmuch
+    branch: frontend
+    runtime: docker
+    region: oregon
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /

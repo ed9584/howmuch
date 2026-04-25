@@ -1,0 +1,16 @@
+# 푸시마다 Docker 이미지가 빌드되는지 확인 (배포 전 검증)
+name: Docker build
+
+on:
+  push:
+    branches: [frontend, main]
+  pull_request:
+    branches: [frontend, main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t howmuch:ci .
